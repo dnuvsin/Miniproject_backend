@@ -14,11 +14,11 @@ public class ReserveHotelApplication {
 		System.out.println("Hello");
 		System.out.println("Backend Reserve Hotel");
 	}
-	
+
 	@GetMapping("/")
 	public String index() {
 		return "Backend Hotel Reserve";
-		
+
 	}
 
 }
