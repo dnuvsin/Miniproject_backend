@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -7,38 +9,42 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="Users")
-public class Users {
+@Table(name="ContactUs")
+public class ContactUs {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer userId;
+	private Integer ContactUsId;
 	
 	private String userName;
 	private String userEmail;
 	private String userPhone;
-	private String userPassword;
+	private String detail;
+	private LocalDate dateContact;
 	
-	public Users() {
+	
+	public ContactUs() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Users(Integer userId, String userName, String userEmail, String userPhone, String userPassword) {
+	public ContactUs(Integer contactUsId, String userName, String userEmail, String userPhone, String detail,
+			LocalDate dateContact) {
 		super();
-		this.userId = userId;
+		ContactUsId = contactUsId;
 		this.userName = userName;
 		this.userEmail = userEmail;
 		this.userPhone = userPhone;
-		this.userPassword = userPassword;
+		this.detail = detail;
+		this.dateContact = dateContact;
 	}
 
-	public Integer getUserId() {
-		return userId;
+	public Integer getContactUsId() {
+		return ContactUsId;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setContactUsId(Integer contactUsId) {
+		ContactUsId = contactUsId;
 	}
 
 	public String getUserName() {
@@ -65,15 +71,21 @@ public class Users {
 		this.userPhone = userPhone;
 	}
 
-	public String getUserPassword() {
-		return userPassword;
+	public String getDetail() {
+		return detail;
 	}
 
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
+	public void setDetail(String detail) {
+		this.detail = detail;
 	}
 
+	public LocalDate getDateContact() {
+		return dateContact;
+	}
 
+	public void setDateContact(LocalDate dateContact) {
+		this.dateContact = dateContact;
+	}
 	
-
+	
 }

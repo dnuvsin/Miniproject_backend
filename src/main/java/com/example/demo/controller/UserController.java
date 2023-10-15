@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import java.io.Console;
 import java.util.List;
 import java.util.Optional;
 
@@ -65,21 +64,6 @@ public class UserController {
 
 	}
 
-//	@PostMapping("/login")
-//    public ResponseEntity<Object> loginUser(@RequestBody Users body) {
-//        Users user = userRepository.findByUserEmail(body.getUserEmail());
-//
-//        if (user == null) {
-//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User not found.");
-//        }
-//
-//        if (!user.getUserPassword().equals(body.getUserPassword())) {
-//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password.");
-//        }
-//
-//        return ResponseEntity.status(HttpStatus.OK).body(user);
-//    }
-
 	@PostMapping("/testLogin")
 	public ResponseEntity<Object> userLogin(@RequestBody Users body) {
 		try {
@@ -97,24 +81,6 @@ public class UserController {
 		}
 		
 	}
-
-//	@PostMapping("/login")
-//	public ResponseEntity<Object> loginUser(@RequestBody Users body) {
-//	    try {
-//	        Optional<Users> user = userRepository.findByUserEmail(body.getUser_email());
-//
-//	        if (user.isPresent() && user.get().getUser_password().equals(body.getUser_password())) {
-//	            // Clear the password before returning the user object
-//	            user.get().setUser_password(null);
-//	            return new ResponseEntity<>(user.get(), HttpStatus.OK);
-//	        } else {
-//	            return new ResponseEntity<>("Invalid credentials.", HttpStatus.UNAUTHORIZED);
-//	        }
-//	    } catch (Exception e) {
-//	        e.printStackTrace(); // Print the exception for debugging
-//	        return new ResponseEntity<>("Internal server error.", HttpStatus.INTERNAL_SERVER_ERROR);
-//	    }
-//	}
 
 
 	@PutMapping("/user/{userId}")
